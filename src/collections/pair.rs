@@ -1,3 +1,4 @@
+#[derive(Default)]
 pub struct Pair {
     value: (i32, i32),
 }
@@ -13,11 +14,6 @@ impl Pair {
 
 }
 
-impl Default for Pair {
-   fn  default() -> Self {
-        return Pair{value: (0,0)}
-    }
-}
 
 
 #[cfg(test)]

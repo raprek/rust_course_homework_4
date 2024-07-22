@@ -1,4 +1,5 @@
 pub const VEC3_LEN: usize = 3;
+#[derive(Default)]
 pub struct Vec3 {
     value: [i32; VEC3_LEN], 
 }
@@ -22,11 +23,6 @@ impl Vec3 {
 
 }
 
-impl Default for Vec3 {
-    fn default() -> Self {
-        Vec3{value: [0; 3]}
-    }
-}
 
 #[cfg(test)]
 mod tests {

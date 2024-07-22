@@ -1,3 +1,4 @@
+#[derive(Default)]
 pub struct SignedCounter  {
     value: isize,
 }
@@ -11,30 +12,19 @@ impl SignedCounter {
         Self { value }
     }
 
-    pub fn prev_signed(self: Self) -> Self {
+    pub fn prev_signed(self) -> Self {
         Self {value: self.value - 1}
     }
 
-    pub fn next_signed(self: Self) -> Self {
+    pub fn next_signed(self) -> Self {
         Self {value: self.value + 1}
     }
-
-
 }
 
-impl Default for SignedCounter {
-    fn default() -> Self {
-        Self { value: 0 }
-    }
-}
 
 impl UnsignedCounter {
-    pub fn next_unsigned(self: Self) -> Self {
+    pub fn next_unsigned(self) -> Self {
         Self {value: self.value + 1}
-    }
-
-    pub fn default() -> Self {
-        Self { value: 0 }
     }
 }
 
@@ -43,6 +33,7 @@ impl Default for UnsignedCounter {
         Self { value: 0 }
     }
 }
+
 
 #[cfg(test)]
 mod tests {
