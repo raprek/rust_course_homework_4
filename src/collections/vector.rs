@@ -1,7 +1,7 @@
 pub const VEC3_LEN: usize = 3;
 #[derive(Default)]
 pub struct Vec3 {
-    value: [i32; VEC3_LEN], 
+    value: [i32; VEC3_LEN],
 }
 
 impl Vec3 {
@@ -12,7 +12,7 @@ impl Vec3 {
         }
         c
     }
-    
+
     pub fn vec3_scalar_sum(a: Vec3, b: Vec3) -> i32 {
         let mut c = 0;
         for i in 0..VEC3_LEN {
@@ -20,9 +20,7 @@ impl Vec3 {
         }
         c
     }
-
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -30,7 +28,7 @@ mod tests {
 
     #[test]
     fn test_vec3_vector_sum() {
-        let ref_test = Vec3::vec3_vector_sum(Vec3{value: [1, 2, 3]}, Vec3{value:[3, 2, 1]});
+        let ref_test = Vec3::vec3_vector_sum(Vec3 { value: [1, 2, 3] }, Vec3 { value: [3, 2, 1] });
         assert_eq!(ref_test.value[0], 4);
         assert_eq!(ref_test.value[1], 4);
         assert_eq!(ref_test.value[2], 4);
@@ -38,7 +36,10 @@ mod tests {
 
     #[test]
     fn test_vec3_scalar_sum() {
-        assert_eq!(Vec3::vec3_scalar_sum(Vec3{value:[1, 2, 3]}, Vec3{value:[3, 2, 1]}), 12)
+        assert_eq!(
+            Vec3::vec3_scalar_sum(Vec3 { value: [1, 2, 3] }, Vec3 { value: [3, 2, 1] }),
+            12
+        )
     }
 
     #[test]
